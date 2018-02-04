@@ -1,4 +1,1003 @@
-<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="format-detection" content="email=no"><meta name="description"><meta name="keywords" content="Hexo, Gruntjs, Nodejs, Reactjs, Vuejs"><title>Hexo</title><link rel="stylesheet" href="/css/main_style.min.css"><link rel="icon" href="/favicon.ico"></head><body><input id="navi" type="checkbox"><ul class="main-navication"><li><a href="/"><span>Home</span></a></li><li><a href="https://github.com"><span>Github</span></a></li><li><a href="https://www.v2ex.com/"><span>V2EX</span></a></li></ul><div class="wrapper" id="wrap"><div class="page-header"><label class="navi-button" for="navi">MENU</label><div class="background"><img src="http://callfiles.ueibo.com/hexo-theme-laughing/page_background.jpg"></div><div class="author"><div class="head"><img src="http://callfiles.ueibo.com/hexo-theme-laughing/thumb.jpg"></div><h3 class="name">jincurry</h3><p class="signature">Only when you plant the flowers can you really smell their fragrance.</p></div></div><ul class="post-list" style="max-width:800px;"><li> <p class="date">September 17, 2017</p><h4 class="title"><a href="/2017/09/17/git-学习-3/">git 学习(3)</a></h4><div class="excerpt"></div><ul class="meta"><li><i class="icon icon-author"></i>jincurry</li><li><i class="icon icon-clock"></i>3 Minutes</li><li><i class="icon icon-category"></i></li></ul></li><li> <p class="date">September 16, 2017</p><h4 class="title"><a href="/2017/09/16/git-学习-2/">git 学习(2)</a></h4><div class="excerpt"></div><ul class="meta"><li><i class="icon icon-author"></i>jincurry</li><li><i class="icon icon-clock"></i>3 Minutes</li><li><i class="icon icon-category"></i></li></ul></li><li> <p class="date">September 15, 2017</p><h4 class="title"><a href="/2017/09/15/git-学习-1/">git 学习(1)</a></h4><div class="excerpt"></div><ul class="meta"><li><i class="icon icon-author"></i>jincurry</li><li><i class="icon icon-clock"></i>2 Minutes</li><li><i class="icon icon-category"></i></li></ul></li><li> <p class="date">May 7, 2017</p><h4 class="title"><a href="/2017/05/07/hello-world/">Hello World</a></h4><div class="excerpt"></div><ul class="meta"><li><i class="icon icon-author"></i>jincurry</li><li><i class="icon icon-clock"></i>2 Minutes</li><li><i class="icon icon-category"></i></li></ul></li></ul><ul class="pagination"><li class="current"><a>1</a></li></ul><div class="page-footer"><div class="top"><ul class="social"><li><a href="https://github.com/BoizZ" title="Github" target="_blank"><i class="icon icon-github"></i></a></li><li><a href="https://weibo.com/heqibang" title="Weibo" target="_blank"><i class="icon icon-weibo"></i></a></li><li><a href="https://www.segmentfault.com/u/bon" title="SegmentFault" target="_blank"><i class="icon icon-segmentfault"></i></a></li></ul></div><div class="bottom"><p class="copyright">© 2018 Hexo<br><small>POWER BY <a href="https://hexo.io" target="_blank">HEXO</a></small><small>, THEME BY <a href="https://github.com/BoizZ/hexo-theme-laughing" target="_blank">LAUGHING</a></small></p></div></div></div><script>var wrap = document.getElementById('wrap');
-window.onload = function () {
-  wrap.className += ' done';
-}</script></body></html>
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Jincurry'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title>Hexo</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/17/git-学习-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="jincurry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/17/git-学习-3/" itemprop="url">git 学习(3)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-17T09:37:08+08:00">
+                2017-09-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="linux-mint下如何安装git以及与git相关的操作"><a href="#linux-mint下如何安装git以及与git相关的操作" class="headerlink" title="linux mint下如何安装git以及与git相关的操作"></a>linux mint下如何安装git以及与git相关的操作</h1><h2 id="1-标签管理"><a href="#1-标签管理" class="headerlink" title="1.标签管理"></a>1.标签管理</h2><p>git的标签是版本库的一个快照，但是标签的实质就是一个指向commit的一个指针，我们可以快速的查看到我们的标签。从而就可以从历史版本中取出来。</p>
+<h4 id="1-1-创建标签"><a href="#1-1-创建标签" class="headerlink" title="1.1 创建标签"></a>1.1 创建标签</h4><p>首先使用命令<code>git branch</code>找到我们需要打标签的分支，然后<code>git checkout branch</code>切换到需要打标签的分支上。</p>
+<p>然后使用命令<code>git tag v1.0</code>就可以打上一个新的标签了。使用<code>git tag</code>就可以查看所有的标签。默认标签是打在最新提交的commit的位置上，如果忘记在历史某个时间点打上标签，解决方法就是找到历史提交的commit id，然后打上标签就可以了。使用<code>git log --pretty=oneline --abbrev-commit</code>查看历史提交记录，使用<code>git tag &lt;commit id&gt;</code>就可以在历史时间打上标签了。</p>
+<p>我们还可以创建带有说明的标签，用-a指定标签名，用-m来指定说明文字，使用<code>git show &lt;tagname&gt;</code>来查看说明文字。</p>
+<p>使用<code>git tag -s &lt;tagname&gt; -m &quot;something&quot;</code>来使用PGP来签名标签。但我们需要安装gpg，我们需要进行配置Key。参考GnuPG帮助文档。</p>
+<h4 id="1-2-操作标签"><a href="#1-2-操作标签" class="headerlink" title="1.2 操作标签"></a>1.2 操作标签</h4><p>使用<code>git tag -d &lt;tagname&gt;</code>来删除标签。推送标签到远程库时，使用命令<code>git push origin &lt;tagname&gt;</code>，一次性推送所有的尚未推送到远程的标签，使用命令<code>git push origin --tags</code>。</p>
+<p>删除远程标签的方法：先从本地删除，使用<code>git tag -d &lt;tagname&gt;</code>，然后进行远程标签的删除，使用命令<code>git push origin:refs/tags/&lt;tagname&gt;</code>。</p>
+<h2 id="2-自定义Git"><a href="#2-自定义Git" class="headerlink" title="2.自定义Git"></a>2.自定义Git</h2><h4 id="2-1-忽略自定义文件"><a href="#2-1-忽略自定义文件" class="headerlink" title="2.1 忽略自定义文件"></a>2.1 忽略自定义文件</h4><p>我们在git的根目录下创建一个特殊的<code>.gitignore</code>文件，然后我们将需要忽略的文件名添加进去，Git就会自动忽略这些文件。</p>
+<p>忽略文件的原则是：<br>忽略操作系统自动生成的文件，比如缩略图等；<br>忽略编译生成的中间文件、可执行文件等，也就是如果一个文件是通过另一个文件自动生成的，那自动生成的文件就没必要放进版本库，比如 Java 编译产生的.class文件；<br>忽略你自己的带有敏感信息的配置文件，比如存放口令的配置文件。</p>
+<h4 id="2-2-配置别名"><a href="#2-2-配置别名" class="headerlink" title="2.2 配置别名"></a>2.2 配置别名</h4><p>使用命令<code>git config --global alias.st staus</code>就表示将命令<code>git status</code>更改为命令<code>git st</code>，以后想要查看状态的时候，使用这一个命令就可以了。我们可以用一个形式来定义这个配置别名：<code>git config --global alias.&lt;othername&gt; command</code>。</p>
+<h4 id="2-3-配置文件"><a href="#2-3-配置文件" class="headerlink" title="2.3 配置文件"></a>2.3 配置文件</h4><p>每个仓库的git配置文件都放在<code>.git/config</code>文件中，而当前的用户的git配置文件放在用户主目录的一个隐藏文件<code>.gitconfig</code>中。配置别名的时候，我们可以直接修改这个文件，当出现出错的时候，我们可以删掉文件进行重新配置。</p>
+<h2 id="3-搭建git服务器"><a href="#3-搭建git服务器" class="headerlink" title="3.搭建git服务器"></a>3.搭建git服务器</h2><p>搭建git服务器需要准备一台运行linux的机器。</p>
+<p>第一步：安装git <code>sudo apt-get install git</code>；</p>
+<p>第二步：创建一个git用户，用来运行git服务 <code>sudo adduser git</code>；</p>
+<p>第三步：创建证书登录，收集所有的需要登录的用户的公钥，就是他们的id_rsa.pub文件，把所有的公钥导入到/home/git/.ssh/authorized_keys文件里，一行放置一个。</p>
+<p>第四步：初始化Git仓库，先选定一个目录作为git仓库，在该目录下输入命令<code>sudo git init --bare sample.git</code>，就初始化完成了一个裸仓库。</p>
+<p>第五步：禁用shell登录，出于安全考虑，第二步创建的 git 用户不允许登录 shell，这可以通过编辑/etc/passwd文件完成。找到类似下面的一行<code>git:x:1001:1001:,,,:/home/git:/bin/bash</code>改为：<br><code>git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell</code><br>这样，git用户可以正常通过 ssh 使用 git，但无法登录 shell，因为我们为git用户指定的git-shell每次一登录就自动退出。</p>
+<p>第六步：克隆远程库，使用命令<code>git clone git@server:/catolog/sample.git</code>在各自的用户下进行运行，这样每个用户就可以在本地修改然后推送到远程库上。这样就完成了一个git服务器的一个搭建。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/16/git-学习-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="jincurry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/16/git-学习-2/" itemprop="url">git 学习(2)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-16T09:37:55+08:00">
+                2017-09-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="linux-mint下如何安装git以及与git相关的操作"><a href="#linux-mint下如何安装git以及与git相关的操作" class="headerlink" title="linux mint下如何安装git以及与git相关的操作"></a>linux mint下如何安装git以及与git相关的操作</h1><h2 id="1-远程仓库"><a href="#1-远程仓库" class="headerlink" title="1.远程仓库"></a>1.远程仓库</h2><p>首先注册一个GitHub的账号，就可以免费获得Git远程仓库。</p>
+<p>第一步我们需要生成SSH key，使用命令<code>ssh-keygen</code>,然后直接按三次回车即可，会在用户.ssh的目录下生成id_rsa和id_rsa.pub，我们只使用id_rsa.pub这一个公钥。</p>
+<p>第二步我们登陆GitHub网站，进入设置页面，选择添加”Add SSH Key”，填写任意的title，在key的文本框里填入id_rsa.pub的内容就可以了。</p>
+<p>这样我们就可以开始进行远程仓库的学习了。</p>
+<h2 id="2-添加远程库"><a href="#2-添加远程库" class="headerlink" title="2.添加远程库"></a>2.添加远程库</h2><p>首先我们在GitHub上新建一个仓库，这是一个非常简单的操作，按照网站上提示进行操作就可以了。我们可以从这个仓库克隆出新的仓库，也可以把一个已有的本地仓库与之关联。然后把本地仓库的内容推送到GitHub的仓库。</p>
+<p>使用命令<code>git remote add origin git@github.com:yourname/repository.git</code>进行远程仓库的关联。使用命令<code>git push -u origin master</code>进行把本地库的所有内容推送到远程库上。由于远程库是空的，第一次使用了-u的参数。从现在起，当本地进行了提交，我们可以通过命令<code>git push origin master</code>进行将本地master分支的最新修改推送到GitHub上。</p>
+<h2 id="3-从远程库克隆"><a href="#3-从远程库克隆" class="headerlink" title="3.从远程库克隆"></a>3.从远程库克隆</h2><p>当我们从零进行开发时，最好的方法是先创建远程库，然后再从远程库进行克隆。</p>
+<p>使用命令<code>git clone git@github.com:yourname/repository.git</code>，进行从远程库进行克隆到本地。如果多人协作开发时，那么每个人各自从远程克隆一份就可以了。git支持多种协议，包括https，但通过ssh支持的原生git协议最快。</p>
+<h2 id="4-分支管理"><a href="#4-分支管理" class="headerlink" title="4.分支管理"></a>4.分支管理</h2><h3 id="4-1-创建和合并分支"><a href="#4-1-创建和合并分支" class="headerlink" title="4.1 创建和合并分支"></a>4.1 创建和合并分支</h3><p>Git维持一个主分支叫做master，git用master指向最新的提交，再用 HEAD指向master，就能确定当前分支，以及当前分支的提交点。<br>创建分支使用命令<code>git check -b newbranch</code>，这是表示创建以及切换到新的分支，也就是相当与下面的两个命令，<code>git branch newbranch</code>和<code>git checkout newbranch</code>，可以使用<code>git branch</code>进行查看当前的分支，当前的分支将会被标记成为*号。在分支上完成了工作，我们切换到主分支上<code>git checkout master</code>，使用命令<code>git merge newbranch</code>进行分支工作成果的合并，当合并完成后，我们就可以放心的删除新建的分支，使用<code>git branch -d newbranch</code>。</p>
+<h3 id="4-2-解决冲突"><a href="#4-2-解决冲突" class="headerlink" title="4.2 解决冲突"></a>4.2 解决冲突</h3><p>合并过程中，并非一次就能完成的，当合并的时候会出现问题，Git会提示我们出现了冲突了，我们需要手动解决冲突后再提交。使用命令<code>git status</code>进行查看冲突的文件。当我们手动解决冲突以后，可以使用<code>git log --graph --pretty=oneline --abbrev-commit</code>也可以看到分支的合并情况。最后再删除不用的分支即可。</p>
+<h3 id="4-3-Bug分支"><a href="#4-3-Bug分支" class="headerlink" title="4.3 Bug分支"></a>4.3 Bug分支</h3><p>当接到修复bug的任务时，我们自然会去创建一个分支去修复它，但是我们正在进行开发的工作并没有完成，这时，我们可以使用stash的功能就行将工作现场”储藏”起来，等以后恢复现场后继续工作，使用的命令就是<code>git stash</code>。当修复分支完成工作后，切换到dev版进行开发，却发现工作区是干净的。这时候使用命令<code>git stash list</code>就可以进行查看工作现场。恢复有两种方法：第一个就是使用<code>git stash apply</code>进行恢复，但是恢复后，stash内容并没有删除，需要使用<code>git stash drop</code>来删除；第二种就是使用<code>git stash pop</code>，会在恢复的同时将stash内容删除。</p>
+<h3 id="4-4-Feature分支"><a href="#4-4-Feature分支" class="headerlink" title="4.4 Feature分支"></a>4.4 Feature分支</h3><p>开发一个新的功能的时候，最后新建一个分支，在这个分支上进行开发，最后合并到主分支上完成新的功能的添加。<br>但是要丢弃一个没有被合并过的分支，可以通过命令<code>git branch -D newbranch</code>来强行删除。</p>
+<h3 id="4-5-多人协作"><a href="#4-5-多人协作" class="headerlink" title="4.5 多人协作"></a>4.5 多人协作</h3><p>查看远程库的信息使用命令<code>git remote</code>。或者使用<code>git remote -v</code>来显示更加详细的信息。</p>
+<p>使用命令<code>git push origin master</code>来进行推送分支，将该分支上的所有的本地提交推送到远程库。如果推送失败，先用<code>git pull</code>抓取远程的新提交。</p>
+<p>在本地创建和远程分支对应的分支，使用<code>git checkout -b branch-name origin/branch-name</code>，本地和远程分支的名称最好一致。</p>
+<p>建立本地分支和远程分支的关联，使用<code>git branch --set-upstream branch-name origin/branch-name</code>。</p>
+<p>从远程抓取分支，使用<code>git pull</code>，如果有冲突，要先处理冲突。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/15/git-学习-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="jincurry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/15/git-学习-1/" itemprop="url">git 学习(1)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-15T15:38:10+08:00">
+                2017-09-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="linux-mint下如何安装git以及与git相关的操作"><a href="#linux-mint下如何安装git以及与git相关的操作" class="headerlink" title="linux mint下如何安装git以及与git相关的操作"></a>linux mint下如何安装git以及与git相关的操作</h1><h2 id="1-安装git"><a href="#1-安装git" class="headerlink" title="1.安装git"></a>1.安装git</h2><p>在终端中使用命令<code>sudo apt-get install git</code>，在完成安装后进行设置，命令行输入：<code>git config --global user.name &quot;your name&quot;</code> and <code>git config --global user.email &quot;your email&quot;</code>。</p>
+<h2 id="2-创建版本库"><a href="#2-创建版本库" class="headerlink" title="2.创建版本库"></a>2.创建版本库</h2><p>首先创建一个空目录，进入目录后，使用命令：<code>git init</code>，就把这个目录变成了Git可以管理的仓库。</p>
+<h2 id="3-添加和提交文件"><a href="#3-添加和提交文件" class="headerlink" title="3.添加和提交文件"></a>3.添加和提交文件</h2><p>新建一个文件，然后命令行使用命令：<code>git add filename</code>，将文件添加入仓库，使用<code>git commit -m &quot;some information&quot;</code></p>
+<h2 id="4-工作区的状态"><a href="#4-工作区的状态" class="headerlink" title="4.工作区的状态"></a>4.工作区的状态</h2><p>使用<code>git status</code>查看工作区的状态，如果提示有文件被修改了，可以使用命令<code>git diff</code>来查看修改的内容。</p>
+<h2 id="5-版本回退"><a href="#5-版本回退" class="headerlink" title="5.版本回退"></a>5.版本回退</h2><p><code>git log</code>查看历史记录，显示的从最近到最远的提交日志，可以加上–pretty=oneline进行简化输出的信息。我们可以看出前面的commit id，这是我们进行恢复以及版本回退时使用的非常重要的东西。在Git中，使用HEAD表示当前的版本，上一个就是HEAD^以及上上一个就是HEAD^^，在往上就是HEAD~100.<br>回退到上一个版本使用命令<code>git reset --hard HEAD^</code>,当想恢复新的版本时，当当前窗口尚未关闭的时候，可以看到顺着上面找到最新版本的commit id，然后使用<code>git reset --hard &lt;commit id&gt;</code>,当已经关闭电脑的时候，使用<code>git reflog</code>查看我们每一次的命令，这样同样可以找到我们的commit id。</p>
+<h2 id="6-工作区与暂存区"><a href="#6-工作区与暂存区" class="headerlink" title="6.工作区与暂存区"></a>6.工作区与暂存区</h2><p>工作区就是我们电脑里能看到的目录，工作区有一个隐藏目录.git，这个是Git的版本库。最重要的一个东西就是暂存区，我们使用<code>git add &lt;filename&gt;</code>时，就是将文件存放到暂存区里，然后使用<code>git commit</code>就是将暂存区的所有内容提交到当前分支上。</p>
+<h2 id="7-管理修改"><a href="#7-管理修改" class="headerlink" title="7.管理修改"></a>7.管理修改</h2><p>git跟踪的是修改，每次修改，如果不add到暂存区，那么commit也就无法提交到分支上。</p>
+<h2 id="8-撤销修改"><a href="#8-撤销修改" class="headerlink" title="8.撤销修改"></a>8.撤销修改</h2><p>1.当你改了工作区某一个文件的内容，想直接丢弃工作区的修改时，使用命令<code>git checkout -- file</code><br>2.当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步使用命令<code>git reset HEAD file</code>，然后就回到场景1，第二步按照场景1操作。<br>3.当你已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，前提时没有推送到远程库。</p>
+<h2 id="9-删除文件"><a href="#9-删除文件" class="headerlink" title="9.删除文件"></a>9.删除文件</h2><p>命令<code>git rm</code>用于删除一个文件，如果一个文件已经被提交到版本库中，那么你永远不用担心误删，使用<code>git checkout -- &lt;filename&gt;</code>进行恢复，但是要小心，你只能恢复文件到最新版，你会丢失最近一次提交后你修改的内容。<br>使用<code>git rm file</code>是同时删掉了工作区的file,并且将删除的动作提交到了暂存区，<code>git checkout -- file</code>表示从暂存区里吧file拎出来，覆盖到工作区。但是，此时暂存区也已经没有了file，是无法还原覆盖到工作区的，正确的做法是<code>git checkout HEAD -- file</code>,或者<code>git checkout HEAD file</code>。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/07/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="jincurry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/07/hello-world/" itemprop="url">Hello World</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-07T17:34:39+08:00">
+                2017-05-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/photo.jpeg"
+               alt="jincurry" />
+          <p class="site-author-name" itemprop="name">jincurry</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">jincurry</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
