@@ -164,10 +164,10 @@
 <h2 id="6-动态绑定"><a href="#6-动态绑定" class="headerlink" title="6.动态绑定"></a>6.动态绑定</h2><p>将一条消息发给对象时，如果并不知道对方的具体类型是什么，但采取的行动同样是正确的，这种情况就叫作“多形性”（ Polymorphism）。对面向对象的程序设计语言来说，它们用以实现多形性的方法叫作“动态绑定”。 编译器和运行期系统会负责对所有细节的控制 。</p>
 <h2 id="7-多线程"><a href="#7-多线程" class="headerlink" title="7.多线程"></a>7.多线程</h2><p>在计算机编程中，一个基本的概念就是同时对多个任务加以控制。 存在许多问题，它们只要求将问题划分进入独立运行的程序片断中，使整个程序能更迅速地响应用户的请求。在一个程序中，这些独立运行的片断叫作“线程”（ Thread），利用它编程的概念就叫作“多线程处理”。多线程处理一个常见的例子就是用户界面。利用线程，用户可按下一个按钮，然后程序会立即作出响应，而不是让用户等待程序完成了当前任务以后才开始响应。 </p>
 <p>多线程处理工程中，需要留意“共享资源”的问题，如果有多个线程同时运行，而且它们试图访问相同的资源，就会遇到一个问题。Java 的多线程机制已内建到语言中，这使一个可能较复杂的问题变得简单起来。  </p>
-<h3 id="8-对象的创建和存在时间"><a href="#8-对象的创建和存在时间" class="headerlink" title="8.对象的创建和存在时间"></a>8.对象的创建和存在时间</h3><p>在一个内存池中动态创建对象，该内存池亦叫“堆”或者“内存堆”。若采用这种方式，除非进入运行期，否则根本不知道到底需要多少个对象，也不知道它们的存在时间有多长，以及准确的类型是什么。这些参数都在程序正式运行时才决定的。若需一个新对象，只需在需要它的时候在内存堆里简单地创建它即可。由于存储空间的管理是运行期间动态进行的，所以在内存堆里分配存储空间的时间比在堆栈里创建的时间长得多 。</p>
+<h2 id="8-对象的创建和存在时间"><a href="#8-对象的创建和存在时间" class="headerlink" title="8.对象的创建和存在时间"></a>8.对象的创建和存在时间</h2><p>在一个内存池中动态创建对象，该内存池亦叫“堆”或者“内存堆”。若采用这种方式，除非进入运行期，否则根本不知道到底需要多少个对象，也不知道它们的存在时间有多长，以及准确的类型是什么。这些参数都在程序正式运行时才决定的。若需一个新对象，只需在需要它的时候在内存堆里简单地创建它即可。由于存储空间的管理是运行期间动态进行的，所以在内存堆里分配存储空间的时间比在堆栈里创建的时间长得多 。</p>
 <p>单根结构中的所有对象都有一个通用接口，所以它们最终都属于相同的类型。 </p>
 <p>利用单根结构，我们可以更方便地实现一个垃圾收集器。与此有关的必要支持可安装于基础类中，而垃圾收集器可将适当的消息发给系统内的任何对象。如果没有这种单根结构，而且系统通过一个句柄来操纵对象，那么实现垃圾收集器的途径会有很大的不同，而且会面临许多障碍。 </p>
-<h3 id="9-分析与设计流程"><a href="#9-分析与设计流程" class="headerlink" title="9.分析与设计流程"></a>9.分析与设计流程</h3><p>（1）拟出一个计划——第一步是决定在后面的过程中采取哪些步骤。 </p>
+<h2 id="9-分析与设计流程"><a href="#9-分析与设计流程" class="headerlink" title="9.分析与设计流程"></a>9.分析与设计流程</h2><p>（1）拟出一个计划——第一步是决定在后面的过程中采取哪些步骤。 </p>
 <p>（2）明确要制作什么——“建立需求分析和系统规格” 。对自己的系统作出清晰的描述，并转移到下一个阶段。</p>
 <p>（3）如何构建——在这一阶段，必须拿出一套设计方案，并解释其中包含的各类对象在外观上是什么样子，以及相互间是如何沟通的。此时可考虑采用一种特殊的图表工具：“统一建模语言”（ UML）。 </p>
 <p>（4）开始构建——构建好系统，并令其运行起来后，必须进行实际检验，以前做的那些需求分析和系统规格便可派上用场了。全面地考察自己的程序，确定提出的所有要求均已满足。 </p>
@@ -178,8 +178,8 @@
       <div class="tags">
         <span>Tags:</span>
         
-  <a href="/tags#Java 编程思想 设计方法" >
-    <span class="tag-code">Java 编程思想 设计方法</span>
+  <a href="/tags#-Java -编程思想 -设计方法" >
+    <span class="tag-code">-Java -编程思想 -设计方法</span>
   </a>
 
       </div>
@@ -242,7 +242,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Java编程思想（1）"><span class="toc-nav-text">Java编程思想（1）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-面向对象程序设计方法"><span class="toc-nav-text">1.面向对象程序设计方法</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-抽象的进步"><span class="toc-nav-text">2.抽象的进步</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-接口的概念"><span class="toc-nav-text">3.接口的概念</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-继承的作用——重新使用接口"><span class="toc-nav-text">4.继承的作用——重新使用接口</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-控制对成员的访问的原因"><span class="toc-nav-text">5.控制对成员的访问的原因</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#6-动态绑定"><span class="toc-nav-text">6.动态绑定</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#7-多线程"><span class="toc-nav-text">7.多线程</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#8-对象的创建和存在时间"><span class="toc-nav-text">8.对象的创建和存在时间</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#9-分析与设计流程"><span class="toc-nav-text">9.分析与设计流程</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Java编程思想（1）"><span class="toc-nav-text">Java编程思想（1）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-面向对象程序设计方法"><span class="toc-nav-text">1.面向对象程序设计方法</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-抽象的进步"><span class="toc-nav-text">2.抽象的进步</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-接口的概念"><span class="toc-nav-text">3.接口的概念</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-继承的作用——重新使用接口"><span class="toc-nav-text">4.继承的作用——重新使用接口</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-控制对成员的访问的原因"><span class="toc-nav-text">5.控制对成员的访问的原因</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#6-动态绑定"><span class="toc-nav-text">6.动态绑定</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#7-多线程"><span class="toc-nav-text">7.多线程</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#8-对象的创建和存在时间"><span class="toc-nav-text">8.对象的创建和存在时间</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#9-分析与设计流程"><span class="toc-nav-text">9.分析与设计流程</span></a></li></ol></li></ol>
     
   </div>
 </aside>
