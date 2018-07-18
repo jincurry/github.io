@@ -10,7 +10,7 @@
   
   <title>
     
-      git 学习(1) | Hexo
+      Hello World | Hexo
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,8 +138,8 @@
 </header>
 
     <div id="article-banner">
-  <h2>git 学习(1)</h2>
-  <p class="post-date">2017-09-15</p>
+  <h2>Hello World</h2>
+  <p class="post-date">2018-07-18</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -147,26 +147,17 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="linux-mint下如何安装git以及与git相关的操作"><a href="#linux-mint下如何安装git以及与git相关的操作" class="headerlink" title="linux mint下如何安装git以及与git相关的操作"></a>linux mint下如何安装git以及与git相关的操作</h1><h2 id="1-安装git"><a href="#1-安装git" class="headerlink" title="1.安装git"></a>1.安装git</h2><p>在终端中使用命令<code>sudo apt-get install git</code>，在完成安装后进行设置，命令行输入：<code>git config --global user.name &quot;your name&quot;</code> and <code>git config --global user.email &quot;your email&quot;</code>。</p>
-<h2 id="2-创建版本库"><a href="#2-创建版本库" class="headerlink" title="2.创建版本库"></a>2.创建版本库</h2><p>首先创建一个空目录，进入目录后，使用命令：<code>git init</code>，就把这个目录变成了Git可以管理的仓库。</p>
-<h2 id="3-添加和提交文件"><a href="#3-添加和提交文件" class="headerlink" title="3.添加和提交文件"></a>3.添加和提交文件</h2><p>新建一个文件，然后命令行使用命令：<code>git add filename</code>，将文件添加入仓库，使用<code>git commit -m &quot;some information&quot;</code></p>
-<h2 id="4-工作区的状态"><a href="#4-工作区的状态" class="headerlink" title="4.工作区的状态"></a>4.工作区的状态</h2><p>使用<code>git status</code>查看工作区的状态，如果提示有文件被修改了，可以使用命令<code>git diff</code>来查看修改的内容。</p>
-<h2 id="5-版本回退"><a href="#5-版本回退" class="headerlink" title="5.版本回退"></a>5.版本回退</h2><p><code>git log</code>查看历史记录，显示的从最近到最远的提交日志，可以加上–pretty=oneline进行简化输出的信息。我们可以看出前面的commit id，这是我们进行恢复以及版本回退时使用的非常重要的东西。在Git中，使用HEAD表示当前的版本，上一个就是HEAD^以及上上一个就是HEAD^^，在往上就是HEAD~100.<br>回退到上一个版本使用命令<code>git reset --hard HEAD^</code>,当想恢复新的版本时，当当前窗口尚未关闭的时候，可以看到顺着上面找到最新版本的commit id，然后使用<code>git reset --hard &lt;commit id&gt;</code>,当已经关闭电脑的时候，使用<code>git reflog</code>查看我们每一次的命令，这样同样可以找到我们的commit id。</p>
-<h2 id="6-工作区与暂存区"><a href="#6-工作区与暂存区" class="headerlink" title="6.工作区与暂存区"></a>6.工作区与暂存区</h2><p>工作区就是我们电脑里能看到的目录，工作区有一个隐藏目录.git，这个是Git的版本库。最重要的一个东西就是暂存区，我们使用<code>git add &lt;filename&gt;</code>时，就是将文件存放到暂存区里，然后使用<code>git commit</code>就是将暂存区的所有内容提交到当前分支上。</p>
-<h2 id="7-管理修改"><a href="#7-管理修改" class="headerlink" title="7.管理修改"></a>7.管理修改</h2><p>git跟踪的是修改，每次修改，如果不add到暂存区，那么commit也就无法提交到分支上。</p>
-<h2 id="8-撤销修改"><a href="#8-撤销修改" class="headerlink" title="8.撤销修改"></a>8.撤销修改</h2><p>1.当你改了工作区某一个文件的内容，想直接丢弃工作区的修改时，使用命令<code>git checkout -- file</code><br>2.当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步使用命令<code>git reset HEAD file</code>，然后就回到场景1，第二步按照场景1操作。<br>3.当你已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，前提时没有推送到远程库。</p>
-<h2 id="9-删除文件"><a href="#9-删除文件" class="headerlink" title="9.删除文件"></a>9.删除文件</h2><p>命令<code>git rm</code>用于删除一个文件，如果一个文件已经被提交到版本库中，那么你永远不用担心误删，使用<code>git checkout -- &lt;filename&gt;</code>进行恢复，但是要小心，你只能恢复文件到最新版，你会丢失最近一次提交后你修改的内容。<br>使用<code>git rm file</code>是同时删掉了工作区的file,并且将删除的动作提交到了暂存区，<code>git checkout -- file</code>表示从暂存区里吧file拎出来，覆盖到工作区。但是，此时暂存区也已经没有了file，是无法还原覆盖到工作区的，正确的做法是<code>git checkout HEAD -- file</code>,或者<code>git checkout HEAD file</code>。</p>
+    <section class="markdown-content"><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 </section>
     <!-- Tags START -->
-    
-      <div class="tags">
-        <span>Tags:</span>
-        
-  <a href="/tags#Git" >
-    <span class="tag-code">Git</span>
-  </a>
-
-      </div>
     
     <!-- Tags END -->
     <!-- NAV START -->
@@ -174,10 +165,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-    
-      <a class="nav-right" href="/2017/09/16/git-学习-2/">
+      <a class="nav-left" href="/2018/02/08/Java编程思想-2/">
+        <span class="nav-arrow">← </span>
         
-          git 学习(2)
+          Java编程思想（2）
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/07/18/spring容器初理解/">
+        
+          spring容器初理解
         
         <span class="nav-arrow"> →</span>
       </a>
@@ -226,7 +224,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#linux-mint下如何安装git以及与git相关的操作"><span class="toc-nav-text">linux mint下如何安装git以及与git相关的操作</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-安装git"><span class="toc-nav-text">1.安装git</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-创建版本库"><span class="toc-nav-text">2.创建版本库</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-添加和提交文件"><span class="toc-nav-text">3.添加和提交文件</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-工作区的状态"><span class="toc-nav-text">4.工作区的状态</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-版本回退"><span class="toc-nav-text">5.版本回退</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#6-工作区与暂存区"><span class="toc-nav-text">6.工作区与暂存区</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#7-管理修改"><span class="toc-nav-text">7.管理修改</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#8-撤销修改"><span class="toc-nav-text">8.撤销修改</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#9-删除文件"><span class="toc-nav-text">9.删除文件</span></a></li></ol></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Quick-Start"><span class="toc-nav-text">Quick Start</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Create-a-new-post"><span class="toc-nav-text">Create a new post</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Run-server"><span class="toc-nav-text">Run server</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Generate-static-files"><span class="toc-nav-text">Generate static files</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Deploy-to-remote-sites"><span class="toc-nav-text">Deploy to remote sites</span></a></li></ol></li></ol>
     
   </div>
 </aside>
@@ -236,7 +234,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2017/09/15/git-学习-1/';
+    var url = 'http://yoursite.com/2018/07/18/hello-world/';
     var banner = 'undefined'
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
@@ -292,7 +290,7 @@
     var gitmentConfig = "jincurry";
     if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
-        id: "git 学习(1)",
+        id: "Hello World",
         owner: "jincurry",
         repo: "jincurry.github.io",
         oauth: {
