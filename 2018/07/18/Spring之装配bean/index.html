@@ -10,7 +10,7 @@
   
   <title>
     
-      spring容器初理解 | Hexo
+      Spring之装配bean | Hexo
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,7 +138,7 @@
 </header>
 
     <div id="article-banner">
-  <h2>spring容器初理解</h2>
+  <h2>Spring之装配bean</h2>
   <p class="post-date">2018-07-18</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
@@ -147,43 +147,52 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="Spring容器初理解"><a href="#Spring容器初理解" class="headerlink" title="Spring容器初理解"></a>Spring容器初理解</h1><p>在基于Spring的应用中，你的应用对象生存于Spring容器中，Spring容器负责创建对象，装配他们，配置它们并管理它们的整个生命周期，从new到finalize。容器是Spring框架的核心。容器使用依赖注入管理构成应用的组件，它会创建相互协作的组件之间的关联，这些对象将会变得更加简单，易于理解，易于重用，并且更容易进行单元测试。</p>
-<p>&emsp;&emsp;在基于Spring的应用中，你的应用对象生存于Spring容器中，Spring容器负责创建对象，装配他们，配置它们并管理它们的整个生命周期，从new到finalize。容器是Spring框架的核心。容器使用依赖注入管理构成应用的组件，它会创建相互协作的组件之间的关联，这些对象将会变得更加简单，易于理解，易于重用，并且更容易进行单元测试。</p>
-<h2 id="1-使用应用上下文"><a href="#1-使用应用上下文" class="headerlink" title="1.使用应用上下文"></a>1.使用应用上下文</h2><h3 id="1-1常用上下文类型"><a href="#1-1常用上下文类型" class="headerlink" title="1.1常用上下文类型"></a>1.1常用上下文类型</h3><ol>
-<li>AnnotationConfigApplicationContext:从一个或者多个基于Java的配置类中加载Spring应用上下文。</li>
-<li>AnnotationConfigWebApplicationContext:从一个或者多个基于Java的配置类中加载Spring Web应用上下文。</li>
-<li>ClassPathXmlApplicationContext:从类路径下的一个或者多个XML配置文件中加载上下文定义，把应用上下文的定义文件作为类资源。</li>
-<li>FileSystemXmlApplicationContext:从文件系统下的一个或者多个XML配置文件中加载上下文定义。</li>
-<li>XmlWebApplicationContext:从Web应用下的一个或者多个XML配置文件中加载上下文定义。</li>
+    <section class="markdown-content"><p>在Spring中，对象无需自己查找或者创建与其自己相关联的其他对象，相反，容器负责把需要相互协作的对象引用赋予各个对象。创建应用对象间协作关系的行为通常称为装配(wiring)，这也是依赖注入的本质。</p>
+<h2 id="1-Spring配置的可选方案"><a href="#1-Spring配置的可选方案" class="headerlink" title="1.Spring配置的可选方案"></a>1.Spring配置的可选方案</h2><ol>
+<li>在XML中进行显式配置；</li>
+<li>在Java中进行显示配置；</li>
+<li>隐式的bean发现机制和自动装配。</li>
 </ol>
-<p>使用如下代码可以加载上下文：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ApplicationContext context = <span class="keyword">new</span> FileSystemXmlApplicationContext(<span class="string">"C:**.xml"</span>)</div></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ApplicationContext context = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"**.xml"</span>)</div></pre></td></tr></table></figure>
-<p>从Java配置中加载上下文：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ApplicationContext context = <span class="keyword">new</span> AnnotationConfigApplicationContext(</div><div class="line">	com.springdemo.classname.config.**config.class)</div></pre></td></tr></table></figure>
-<h2 id="2-bean的生命周期"><a href="#2-bean的生命周期" class="headerlink" title="2.bean的生命周期"></a>2.bean的生命周期</h2><ol>
-<li>Spring对bean进行实例化；</li>
-<li>Spring将值和bean的引用注入到bean对应的属性中；</li>
-<li>如果bean实现了BeanNameAware接口，Spring将bean的ID传递给setBeanName()方法；</li>
-<li>如果bean实现了BeanFactoryAware接口，Spring将调用setBeanFactory()方法，将BeanFactory容器实例传入；</li>
-<li>如果bean实现了ApplicationContextAware接口，Spring将调用setApplicationContext()方法，将bean所在的应用上下文的引用传入进来；</li>
-<li>如果bean实现了BeanPostProcessor接口，Spring将调用它们的postProcessorBeforeInitialization()方法；</li>
-<li>如果bean实现了InitializingBean接口，Spring将调用它们的afterPropertiesSet()方法，类似的，如果bean使用initmethod声明了初始化方法，该方法也会被调用；</li>
-<li>如果bean实现了BeanPostProcessor接口，Spring将调用它们的postProcessAfterInitialization()方法；</li>
-<li>此时，bean已经准备就绪，可以被应用程序使用了， 他们将一直驻留在应用上下文中，直到该应用上下文被销毁；</li>
-<li>如果bean实现了DisposableBean接口，Spring将调用它的destroy()接口方法。同样，如果bean使用destroy-method声明了销毁方法，该方法也会被调用。</li>
-</ol>
-<h2 id="3-Spring小结"><a href="#3-Spring小结" class="headerlink" title="3.Spring小结"></a>3.Spring小结</h2><p>Spring致力于简化企业级Java开发，促进代码的松散耦合。成功的关键在于依赖注入和AOP(面向切面编程)。</p>
-<p>DI是组装应用对象的一种方式，借助这种方式对象无需知道依赖来自何方或者依赖的实现方式。不同于自己获取依赖对象，对象会在运行期间赋予它们所依赖的对象，依赖对象通常会通过接口了解所注入的对象，从而保证低耦合。</p>
-<p>AOP可以帮助应用将散落在各处的逻辑汇集于一处——切面。当Spring装配bean的时候，这些切面能够在运行期间编织起来，这样能够非常有效的赋予bean 新的行为。</p>
+<h2 id="2-自动装配bean"><a href="#2-自动装配bean" class="headerlink" title="2.自动装配bean"></a>2.自动装配bean</h2><p>Spring从两个角度来实现自动化装配：</p>
+<ul>
+<li>组件扫描：Spring会自动发现应用上下文中所创建的bean。</li>
+<li>自动装配：Spring自动满足bean之间的依赖。</li>
+</ul>
+<p>在一个类的上面使用@component进行注解，这个简单的注解表明该类会作为一个组件类，并告知Spring要为这个类创建bean。但是，组件扫描默认是不启用的。需要配置一下Spring，从而让其能够寻找带有@component注解的类，并为其创建bean。</p>
+<p>使用@Component(“新的 bean ID”)来为组件扫描的bean进行命名。而默认是是使用类名并将类名的第一个字母变为小写来命名。</p>
+<p>使用@ ComponentScan注解启用组件扫描或者使用XML启用组件扫描。同时可以添加属性设置组件扫描的基础包，如@ComponentScan(basePackages=”包名”)或者使用@ComponentScan(basePackageClasses={xx.class, **.class})。</p>
+<p>通过对bean添加注解实现自动装配，自动装配就是让Spring自动满足bean依赖的一种方法。在满足依赖的过程中，会在Spring应用上下文中寻找某个bean需求的其他bean。为了声明要进行自动装配，我们可以借助Spring的@AutoWired注解。</p>
+<h2 id="3-通过Java代码装配bean"><a href="#3-通过Java代码装配bean" class="headerlink" title="3.通过Java代码装配bean"></a>3.通过Java代码装配bean</h2><p>在进行显式配置的时候，JavaConfig是更好的方案，因为它更为强大、类型安全并且对重构友好。创建JavaConfig类的关键在于为其添加@configuration注解，这个注解表明这个类是一个配置类，该类应该包含Spring应用上下文中如何创建bean的细节。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@configuration</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CDPlayerConfig</span></span>&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>要在JavaConfig中声明bean，我们需要编写一个方法，这个方法会创建所需类型的实例。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Bean</span></div><div class="line"><span class="function"><span class="keyword">public</span> CompactDisc <span class="title">sgtPeppers</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> SgtPeppers();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>@Bean注解会告诉Spring这个方法将会返回一个对象，搞对象要注册为Spring应用上下文中的bean，方法体中包含了最终产生bean实例的逻辑。同时可以使用name属性为@Bean注解进行命名。</p>
+<p>如何借助JavaConfig实现注入呢？最简单的方法就是引用创建bean的方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Bean</span></div><div class="line"><span class="function"><span class="keyword">public</span> CDPlayer <span class="title">cdPlayer</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> CDPlayer(sgtPeppers());</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Bean</span></div><div class="line"><span class="function"><span class="keyword">public</span> CDPlayer <span class="title">cdPlayer</span><span class="params">(CompactDisc compactDisc)</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> CDPlayer(compactDisc);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="4-通过XML装配bean"><a href="#4-通过XML装配bean" class="headerlink" title="4.通过XML装配bean"></a>4.通过XML装配bean</h2><p>在XML配置中，我们要先创建一个XML文件，并且要以\<beans>元素作为根。</beans></p>
+<p>\<bean>元素类似于JavaConfig中的@Bean注解，可以使用如下方式进行声明一个bean。</bean></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"conpactDisc"</span> <span class="attr">class</span>=<span class="string">"soundsystem.SgtPepers"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<p>借助构造器注入初始化bean有两种基本配置方案：</p>
+<ul>
+<li>\<constructor-arg>元素</constructor-arg></li>
+<li>使用Spring3.0所引入的c-命名空间</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"cdPlayer"</span> <span class="attr">class</span>=<span class="string">"soundsystem.CDPlayer"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">ref</span>=<span class="string">"compactDisc"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>使用命名空间的话，需要现在XML顶部声明其模式，然后就可以使用它来声明构造器参数了，如下所示：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"cdPlayer"</span> <span class="attr">class</span>=<span class="string">"soundsystem.CDPlayer"</span></span></div><div class="line">      <span class="attr">c:cd-ref</span>=<span class="string">"compactDisc"</span> /&gt;</div></pre></td></tr></table></figure>
 </section>
     <!-- Tags START -->
     
       <div class="tags">
         <span>Tags:</span>
         
-  <a href="/tags#spring" >
-    <span class="tag-code">spring</span>
+  <a href="/tags#Spring" >
+    <span class="tag-code">Spring</span>
+  </a>
+
+  <a href="/tags#Java" >
+    <span class="tag-code">Java</span>
   </a>
 
       </div>
@@ -194,20 +203,13 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2018/07/18/hello-world/">
+      <a class="nav-left" href="/2018/07/18/spring容器初理解/">
         <span class="nav-arrow">← </span>
         
-          Hello World
+          spring容器初理解
         
       </a>
     
-    
-      <a class="nav-right" href="/2018/07/18/Spring之装配bean/">
-        
-          Spring之装配bean
-        
-        <span class="nav-arrow"> →</span>
-      </a>
     
   </div>
 
@@ -253,7 +255,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Spring容器初理解"><span class="toc-nav-text">Spring容器初理解</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-使用应用上下文"><span class="toc-nav-text">1.使用应用上下文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-1常用上下文类型"><span class="toc-nav-text">1.1常用上下文类型</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-bean的生命周期"><span class="toc-nav-text">2.bean的生命周期</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-Spring小结"><span class="toc-nav-text">3.Spring小结</span></a></li></ol></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-Spring配置的可选方案"><span class="toc-nav-text">1.Spring配置的可选方案</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-自动装配bean"><span class="toc-nav-text">2.自动装配bean</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-通过Java代码装配bean"><span class="toc-nav-text">3.通过Java代码装配bean</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-通过XML装配bean"><span class="toc-nav-text">4.通过XML装配bean</span></a></li></ol>
     
   </div>
 </aside>
@@ -263,7 +265,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2018/07/18/spring容器初理解/';
+    var url = 'http://yoursite.com/2018/07/18/Spring之装配bean/';
     var banner = 'undefined'
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
@@ -319,7 +321,7 @@
     var gitmentConfig = "jincurry";
     if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
-        id: "spring容器初理解",
+        id: "Spring之装配bean",
         owner: "jincurry",
         repo: "jincurry.github.io",
         oauth: {
