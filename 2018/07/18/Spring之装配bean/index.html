@@ -170,12 +170,12 @@
 <p>如何借助JavaConfig实现注入呢？最简单的方法就是引用创建bean的方法。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Bean</span></div><div class="line"><span class="function"><span class="keyword">public</span> CDPlayer <span class="title">cdPlayer</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> CDPlayer(sgtPeppers());</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Bean</span></div><div class="line"><span class="function"><span class="keyword">public</span> CDPlayer <span class="title">cdPlayer</span><span class="params">(CompactDisc compactDisc)</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> CDPlayer(compactDisc);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="4-通过XML装配bean"><a href="#4-通过XML装配bean" class="headerlink" title="4.通过XML装配bean"></a>4.通过XML装配bean</h2><p>在XML配置中，我们要先创建一个XML文件，并且要以\<beans>元素作为根。</beans></p>
+<h2 id="4-通过XML装配bean"><a href="#4-通过XML装配bean" class="headerlink" title="4.通过XML装配bean"></a>4.通过XML装配bean</h2><p>在XML配置中，我们要先创建一个XML文件，并且要以&lt;beans&gt;元素作为根。</p>
 <p>\<bean>元素类似于JavaConfig中的@Bean注解，可以使用如下方式进行声明一个bean。</bean></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"conpactDisc"</span> <span class="attr">class</span>=<span class="string">"soundsystem.SgtPepers"</span> /&gt;</span></div></pre></td></tr></table></figure>
 <p>借助构造器注入初始化bean有两种基本配置方案：</p>
 <ul>
-<li>\<constructor-arg>元素</constructor-arg></li>
+<li>&lt;constructor-arg&gt;元素</li>
 <li>使用Spring3.0所引入的c-命名空间</li>
 </ul>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"cdPlayer"</span> <span class="attr">class</span>=<span class="string">"soundsystem.CDPlayer"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">ref</span>=<span class="string">"compactDisc"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div></pre></td></tr></table></figure>
