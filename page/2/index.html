@@ -10,7 +10,7 @@
   
   <title>
     
-      Tags | Hexo
+      Hexo
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -65,7 +65,7 @@
       
         <li class="list-item">
           
-            <a href="/" class="item-link">Home</a>
+            <a href="/" class="item-link active">Home</a>
           
         </li>
       
@@ -104,7 +104,7 @@
         
           <li class="menu-item">
             
-              <a href="/" class="menu-link">Home</a>
+              <a href="/" class="menu-link mobile-active">Home</a>
             
           </li>
         
@@ -137,153 +137,42 @@
   </div>
 </header>
 
-    <div id="article-banner">
-  <h2>Tags</h2>
-  <p class="post-date">标签检索</p>
-</div>
-<main class="app-body">
-  <div id="tag-cloud">
-    
-      <a class="tag3" data-name="tag-Java编程思想">Java编程思想</a>
-    
-      <a class="tag2" data-name="tag-设计方法">设计方法</a>
-    
-      <a class="tag1" data-name="tag-Spring">Spring</a>
-    
-      <a class="tag2" data-name="tag-Java">Java</a>
-    
-      <a class="tag2" data-name="tag-Git">Git</a>
-    
-      <a class="tag0" data-name="tag-spring">spring</a>
-    
-      <a class="tag0" data-name="tag--Spring">-Spring</a>
-    
-  </div>
+    <main class="app-body">
   
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-Java编程思想">Java编程思想</h3>
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/09/15/git-学习-1/">git 学习(1)</a>
+      </h2>
+      <p class="article-date">September 15, 2017</p>
       
-        <ul class="tag-preview">
-          <li>
-            <a href="/2018/02/07/Java编程思想-1/">Java编程思想（1）</a>
-          </li>
-        </ul>
         
-        <ul class="tag-preview">
-          <li>
-            <a href="/2018/02/08/Java编程思想-2/">Java编程思想（2）</a>
-          </li>
-        </ul>
-        
-    </div>
-    
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-设计方法">设计方法</h3>
+  <a href="/tags#Git" >
+    <span class="tag-code">Git</span>
+  </a>
+
       
-        <ul class="tag-preview">
-          <li>
-            <a href="/2018/02/07/Java编程思想-1/">Java编程思想（1）</a>
-          </li>
-        </ul>
+      <div class="article-summary">
         
-    </div>
-    
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-Spring">Spring</h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/2018/07/23/Spring-MVC初步探索/">Spring MVC初步探索</a>
-          </li>
-        </ul>
+          linux mint下如何安装git以及与git相关的操作1.安装git在终端中使用命令sudo apt-get install git，在完成安装后进行设置，命令行输入：git config --global user.name &quot;your name&quot; and git  ...
         
-        <ul class="tag-preview">
-          <li>
-            <a href="/2018/07/18/Spring之装配bean/">Spring之装配bean</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/2018/07/19/高级装配/">高级装配</a>
-          </li>
-        </ul>
-        
-    </div>
-    
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-Java">Java</h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/2018/07/18/Spring之装配bean/">Spring之装配bean</a>
-          </li>
-        </ul>
-        
-    </div>
-    
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-Git">Git</h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/2017/09/15/git-学习-1/">git 学习(1)</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/2017/09/16/git-学习-2/">git 学习(2)</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/2017/09/17/git-学习-3/">git 学习(3)</a>
-          </li>
-        </ul>
-        
-    </div>
-    
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-spring">spring</h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/2018/07/18/spring容器初理解/">spring容器初理解</a>
-          </li>
-        </ul>
-        
-    </div>
-    
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag--Spring">-Spring</h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/2018/07/20/面向切面的Spring/">面向切面的Spring</a>
-          </li>
-        </ul>
-        
-    </div>
-    
+      </div>
+      <a class="more" href="/2017/09/15/git-学习-1/">Read more</a>
+    </article>
+  
+
+  
+    <div class="guide-pager">
+  
+    <a href="/"><span class="page-arrow">← </span>Prev</a>
+  
+  
+    <a class="unvisible" href="/">Next <span class="page-arrow">→</span></a>
+  
+</div>
+  
 </main>
 
-<script>
-  (function () {
-    var url = 'http://yoursite.com/tags/index.html'
-    $('#article-banner').geopattern(url)
-    $('.header').removeClass('fixed-header')
 
-    var tag = location.hash.replace('#', '')
-    if (tag) {
-      var tagId = "#tag-" + tag;
-      $("html, body").animate({
-        scrollTop: $(tagId).offset().top 
-      }, 400)
-    }
-  })();
-</script>
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>
