@@ -144,19 +144,19 @@
 <main class="app-body">
   <div id="tag-cloud">
     
-      <a class="tag2" data-name="tag-Java编程思想">Java编程思想</a>
+      <a class="tag1" data-name="tag-Java编程思想">Java编程思想</a>
     
       <a class="tag0" data-name="tag-设计方法">设计方法</a>
     
-      <a class="tag1" data-name="tag-Spring">Spring</a>
+      <a class="tag3" data-name="tag-Spring">Spring</a>
+    
+      <a class="tag2" data-name="tag-Java">Java</a>
     
       <a class="tag2" data-name="tag-Git">Git</a>
     
-      <a class="tag1" data-name="tag-Java">Java</a>
+      <a class="tag3" data-name="tag-spring">spring</a>
     
-      <a class="tag1" data-name="tag--Spring">-Spring</a>
-    
-      <a class="tag1" data-name="tag-spring">spring</a>
+      <a class="tag2" data-name="tag--Spring">-Spring</a>
     
   </div>
   
@@ -218,6 +218,17 @@
     </div>
     
     <div class="tag-list">
+      <h3 class="tag-name" id="tag-Java">Java</h3>
+      
+        <ul class="tag-preview">
+          <li>
+            <a href="/2018/07/18/Spring之装配bean/">Spring之装配bean</a>
+          </li>
+        </ul>
+        
+    </div>
+    
+    <div class="tag-list">
       <h3 class="tag-name" id="tag-Git">Git</h3>
       
         <ul class="tag-preview">
@@ -241,11 +252,11 @@
     </div>
     
     <div class="tag-list">
-      <h3 class="tag-name" id="tag-Java">Java</h3>
+      <h3 class="tag-name" id="tag-spring">spring</h3>
       
         <ul class="tag-preview">
           <li>
-            <a href="/2018/07/18/Spring之装配bean/">Spring之装配bean</a>
+            <a href="/2018/07/18/spring容器初理解/">spring容器初理解</a>
           </li>
         </ul>
         
@@ -262,22 +273,11 @@
         
     </div>
     
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-spring">spring</h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/2018/07/18/spring容器初理解/">spring容器初理解</a>
-          </li>
-        </ul>
-        
-    </div>
-    
 </main>
 
 <script>
   (function () {
-    var url = 'https://jincurry.me/tags/index.html'
+    var url = 'http://jincurry.me/tags/index.html'
     $('#article-banner').geopattern(url)
     $('.header').removeClass('fixed-header')
 
